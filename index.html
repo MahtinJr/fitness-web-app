@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FitnessTracker</title>
+    <link rel="stylesheet" type="text/css" href="lib/css/style.css">
+    <!-- bootstrap css -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <!-- fontawesome cdn -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+   <script>
+      function submit() {
+         var name = document.getElementById('name').value;
+         var id = document.getElementById('id').value;
+         var request = new XMLHttpRequest();
+         request.open('POST', 'getData.php', true);
+         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+         request.onreadystatechange = function () {
+            if(request.readyState === 4 && request.status === 200) {
+               console.log(request.responseText);
+            }
+         }
+         request.send("name="+name+"&id="+id);
+
+      }
+   </script>
+
+
+</head>
+<body>
+    <div class="mobile-wrapper">
+            <!-- header -->
+            <header class="header">
+               <div class="container">
+                  <h1>Fitness Tracker</h1>
+               </div>
+            </header>
+         
+            <!--======= Today =======-->
+         
+            <section class="today-box" id="today-box">
+               <span>Today</span>
+               <h3 class="date-title">May 15, 2018</h3>
+         
+               <div class="plus-icon">
+                    <p>Select Date <input type="date" id="datepicker" value=""></p>
+                    <hr>
+                    Enter a name: <input type="text" id="name">
+                    Enter an ID: <input type="text" id="id">
+                    <input type="submit" value="Submit" onclick="submit()">
+               </div>
+            </section>
+
+
+            <!--======= Upcoming Events =======-->
+         
+            <section class="upcoming-events">
+               <div class="container">
+                  <h3>Exercises</h3>
+                 
+                    <style>
+                        .flexBox {
+                            display:flex;
+                            justify-content: space-around;
+                            width: 100%;
+                        }
+                        
+                        span:nth-child(1) {
+                            flex-grow: 0;
+                            flex-basis: 50%;
+                        }  
+                        
+                        span:nth-child(2), span:nth-child(3) {
+                            flex-basis: 15%;
+                        }
+
+                        span:nth-child(4) {
+                            flex-basis: 20%;
+                        }
+                        
+                      .row {
+                        margin-bottom: 2rem;
+
+                      }
+                      
+                      .titleHeader {
+                        color: #555;
+
+font-weight: 800;
+letter-spacing: 1px;
+                      }
+                      
+                    </style>
+          
+                 
+                 
+                 
+                 <div class="row">
+                   
+          
+                    <div class="flexBox">
+                        <span class="titleHeader">Excerise</span>
+                        <span class="titleHeader">Set</span>
+                        <span class="titleHeader">Rep</span>
+                        <span class="titleHeader">Weight</span>
+                    </div>
+                    <div class="flexBox">
+                        <span>Barbell Bench Press</span>
+                        <span>1</span>
+                        <span>8</span>
+                        <span>25 lbs</span>
+                    </div>
+                    <div class="flexBox">
+                            <span></span>
+                            <span>2</span>
+                            <span>8</span>
+                            <span>25 lbs</span>
+                        </div>
+                        <div class="flexBox">
+                                <span></span>
+                                <span>3</span>
+                                <span>8</span>
+                                <span>25 lbs</span>
+                            </div>
+      </div>
+                 
+     
+                 
+                      <div class="row">
+                   
+          
+                    <div class="flexBox">
+                        <span>Excerise</span>
+                        <span>Set</span>
+                        <span>Rep</span>
+                        <span>Weight</span>
+                    </div>
+                    <div class="flexBox">
+                        <span>Barbell Bench Press</span>
+                        <span>1</span>
+                        <span>8</span>
+                        <span>25 lbs</span>
+                    </div>
+                    <div class="flexBox">
+                            <span></span>
+                            <span>2</span>
+                            <span>8</span>
+                            <span>25 lbs</span>
+                        </div>
+                        <div class="flexBox">
+                                <span></span>
+                                <span>3</span>
+                                <span>8</span>
+                                <span>25 lbs</span>
+                            </div>
+      </div>
+                 
+                 
+                 
+                      <div class="row">
+                   
+          
+                    <div class="flexBox">
+                        <span>Excerise</span>
+                        <span>Set</span>
+                        <span>Rep</span>
+                        <span>Weight</span>
+                    </div>
+                    <div class="flexBox">
+                        <span>Barbell Bench Press</span>
+                        <span>1</span>
+                        <span>8</span>
+                        <span>25 lbs</span>
+                    </div>
+                    <div class="flexBox">
+                            <span></span>
+                            <span>2</span>
+                            <span>8</span>
+                            <span>25 lbs</span>
+                        </div>
+                        <div class="flexBox">
+                                <span></span>
+                                <span>3</span>
+                                <span>8</span>
+                                <span>25 lbs</span>
+                            </div>
+      </div>
+                 
+                 
+                 
+                 
+                 
+                      <div class="row">
+                   
+          
+                    <div class="flexBox">
+                        <span>Excerise</span>
+                        <span>Set</span>
+                        <span>Rep</span>
+                        <span>Weight</span>
+                    </div>
+                    <div class="flexBox">
+                        <span>Barbell Bench Press</span>
+                        <span>1</span>
+                        <span>8</span>
+                        <span>25 lbs</span>
+                    </div>
+                    <div class="flexBox">
+                            <span></span>
+                            <span>2</span>
+                            <span>8</span>
+                            <span>25 lbs</span>
+                        </div>
+                        <div class="flexBox">
+                                <span></span>
+                                <span>3</span>
+                                <span>8</span>
+                                <span>25 lbs</span>
+                            </div>
+      </div>
+                 
+                 
+                      <div class="row">
+                   
+          
+                    <div class="flexBox">
+                        <span>Excerise</span>
+                        <span>Set</span>
+                        <span>Rep</span>
+                        <span>Weight</span>
+                    </div>
+                    <div class="flexBox">
+                        <span>Barbell Bench Press</span>
+                        <span>1</span>
+                        <span>8</span>
+                        <span>25 lbs</span>
+                    </div>
+                    <div class="flexBox">
+                            <span></span>
+                            <span>2</span>
+                            <span>8</span>
+                            <span>25 lbs</span>
+                        </div>
+                        <div class="flexBox">
+                                <span></span>
+                                <span>3</span>
+                                <span>8</span>
+                                <span>25 lbs</span>
+                            </div>
+      </div>
+                 
+                 
+                      <div class="row">
+                   
+          
+                    <div class="flexBox">
+                        <span>Excerise</span>
+                        <span>Set</span>
+                        <span>Rep</span>
+                        <span>Weight</span>
+                    </div>
+                    <div class="flexBox">
+                        <span>Barbell Bench Press</span>
+                        <span>1</span>
+                        <span>8</span>
+                        <span>25 lbs</span>
+                    </div>
+                    <div class="flexBox">
+                            <span></span>
+                            <span>2</span>
+                            <span>8</span>
+                            <span>25 lbs</span>
+                        </div>
+                        <div class="flexBox">
+                                <span></span>
+                                <span>3</span>
+                                <span>8</span>
+                                <span>25 lbs</span>
+                            </div>
+      </div>
+                 
+                 
+                      <div class="row">
+                   
+          
+                    <div class="flexBox">
+                        <span>Excerise</span>
+                        <span>Set</span>
+                        <span>Rep</span>
+                        <span>Weight</span>
+                    </div>
+                    <div class="flexBox">
+                        <span>Barbell Bench Press</span>
+                        <span>1</span>
+                        <span>8</span>
+                        <span>25 lbs</span>
+                    </div>
+                    <div class="flexBox">
+                            <span></span>
+                            <span>2</span>
+                            <span>8</span>
+                            <span>25 lbs</span>
+                        </div>
+                        <div class="flexBox">
+                                <span></span>
+                                <span>3</span>
+                                <span>8</span>
+                                <span>25 lbs</span>
+                            </div>
+      </div>
+                 
+                 
+                      <div class="row">
+                   
+          
+                    <div class="flexBox">
+                        <span>Excerise</span>
+                        <span>Set</span>
+                        <span>Rep</span>
+                        <span>Weight</span>
+                    </div>
+                    <div class="flexBox">
+                        <span>Barbell Bench Press</span>
+                        <span>1</span>
+                        <span>8</span>
+                        <span>25 lbs</span>
+                    </div>
+                    <div class="flexBox">
+                            <span></span>
+                            <span>2</span>
+                            <span>8</span>
+                            <span>25 lbs</span>
+                        </div>
+                        <div class="flexBox">
+                                <span></span>
+                                <span>3</span>
+                                <span>8</span>
+                                <span>25 lbs</span>
+                            </div>
+      </div>
+                 
+                 
+                  <!--<div class="events-wrapper">
+                     <div class="event">
+                        <i class="ion ion-ios-flame hot"></i>
+                        <h4 class="event__point">*</h4>
+                        <span class="event__duration">in 30 minutes.</span>
+                        <p class="event__description">
+                           Monday briefing with the team (...).
+                        </p>
+                     </div>
+                     <div class="event">
+                        <i class="ion ion-ios-flame done"></i>
+                        <h4 class="event__point">12:00 pm</h4>
+                        <span class="event__duration">in 1 hour.</span>
+                        <p class="event__description">
+                           Lunch with Paul Mccartney @Burgers House!
+                        </p>
+                     </div>
+                     <div class="event active">
+                        <i class="ion ion-ios-radio-button-on icon-in-active-mode"></i>
+                        <h4 class="event__point">14:00 pm</h4>
+                        <p class="event__description">
+                           Meet clients from project.
+                        </p>
+                     </div>
+                     <div class="event">
+                        <i class="ion ion-ios-flame-outline upcoming"></i>
+                        <h4 class="event__point">20:45 pm</h4>
+                        <span class="event__duration">in 45 minutes.</span>
+                        <p class="event__description">
+                           Watch sci-fi series.
+                        </p>
+                     </div>
+                     <div class="event">
+                        <i class="ion ion-ios-flame-outline upcoming"></i>
+                        <h4 class="event__point">23:15 pm</h4>
+                        <span class="event__duration">in 20 minutes.</span>
+                        <p class="event__description">
+                           Customer dialog on Skype.
+                        </p>
+                     </div>
+                  </div>
+                  <button class="add-event-button">
+                     <span class="add-event-button__title">Add Exercise</span>
+         
+                     <span class="add-event-button__icon">
+                        <i class="ion ion-ios-star-outline"></i>
+                     </span> 
+         
+         
+                  </button> -->
+               </div>
+            </section>
+         </div>
+         
+    <footer>
+
+        <!-- bootstrap js -->
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    </footer>
+</body>
+</html>
